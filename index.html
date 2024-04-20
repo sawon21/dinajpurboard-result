@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Dinajpur Board Result with Marksheed">
+<meta property="og:description" content="এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
+        এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারেন।">
+    <meta property="og:image" content="Dbr.jpg">
+<link rel="icon" href=Dbr.jpg"/>    
+    <title>Dinajpur Board Individual Student Result</title>
+    <style>
+    
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.maateen.me/apona-lohit/font.css');  
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #99E1D9;
+            color: #333;
+        }
+        header {
+            background-color: #E81750;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1{
+          color: #fff;
+        }
+        nav {
+            background-color:  #17252A;
+            padding: 10px 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+        nav a {
+            color: #DEF2F1 ;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #04449c;
+            padding:10px;
+            color: yellow;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #content {
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px;
+            font-family: 'AponaLohit', sans-serif; 
+            font-weight: bold;
+        }
+      #content h2 {
+           color: brown ;
+        }  
+        #content h3 {
+           color: blue ;
+           font-size: 25px;
+        }
+      #content h5 {
+           color: #888;
+           font-family: "Lucida Console", Courier, monospace; 
+        }  
+        h2 {
+            color: #333;
+        }
+        h3{
+          color: white;
+        }
+        p {
+            line-height: 1.6;
+        }
+
+
+button {
+ width: 9em;
+ height: 3em;
+ border-radius: 30em;
+ font-size: 20px;
+ font-weight: bold;
+ font-family: "Poppins", sans-serif;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #333;
+}
+
+button::before {
+ content: '';
+ width: 0;
+ height: 3em;
+ border-radius: 30em;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+button:hover::before {
+ width: 9em;
+}
+
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px;
+    border-radius: 0px;
+    z-index: 9999;
+  }
+  /* Overlay styles */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  }
+  /* Close button styles */
+  .close-btn {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+    padding: 5px;
+    background: red;
+  }
+  .close-btn:hover {
+    color: red;
+  }
+</style>
+</head>
+<body>
+    <header>
+        <h1>DINAJPUR BOARD </h1>
+        <h3>Individual Student Result</h3>
+    </header>
+    <nav>
+        <a href="#" onclick="showContent('SSC')">SSC</a>
+       <a>|</a> 
+        <a href="#" onclick="showContent('HSC')">HSC</a>
+      <!---  <a href="#" onclick="showContent('contact')">Contact</a> --->
+    </nav>
+    <div id="content">
+        <h2>Welcome!</h2>
+        <p>এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
+        এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারবেন | </p>
+    <h1>নির্দেশনা- </h1>
+      <h3>✪ SSC</h3>
+    <p> SSC পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
+       <a href="#" onclick="showContent('SSC')"> <img src="Ssc.jpg" width="100%"></a>
+       
+    <h3>✪ HSC</h3>
+    <p> HSC পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
+       <a href="#" onclick="showContent('HSC')"> <img src="Hsc.jpg" width="100%"></a>
+       
+   <p style="color:green"> Sponsor ◑
+   <br> 
+   হাজার টাকার গাইড, টেস্টপেপার ও প্রশ্নব্যাংকের বিকল্প এখন
+CHORCHA APP
+   </p>
+   <img src="ads.gif" width="100%">
+  <h5>page visitors : </h5>   
+ <h5 align"center"> <a> <img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=rqb8amr36ynzhc3uehtmawuul58yd6pw" border="0" title="free web counter" alt="web counter"></a></h5>
+ <p>................</p>
+    </div>
+    
+    <footer>
+      
+ <!-- Popup content -->
+<div id="popup" class="popup">
+  <a class="close-btn" onclick="closePopup()">X</a> <br>
+<a href="ads.gif" download ><img src="ads.gif" width="120%"> </a>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay">
+  <h1 align="center"> <mark>ক্লাস যেখানেই করোনা কেনো,পরীক্ষা দাও দেশ সেরা এক্সাম প্ল্যাটফর্মে!<br> 20% Discount <br> "dgcc20"</mark></h1>
+</div>     
+      
+  <h4 style="color:white"><pre>© Developed by <a style="color:#FFE4E1" href="https://www.facebook.com/mdmehedialhasansawon">Mehedi Al Hasan Sawon</pre> </a></h4>
+    </footer>
+
+    <script>
+        function showContent(page) {
+            const contentDiv = document.getElementById('content');
+            switch(page) {
+                case 'SSC':
+    contentDiv.innerHTML = `
+<p align="center"><a href="#"> <button> SSC - 2024
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/sscresult2023/search/each.php"> <button> SSC - 2023
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/ssc_result2022/search/each.php"> <button> SSC - 2022
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/ssc_result2021/search/each.php"> <button> SSC - 2021
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/ssc_res_2020/search/each.php"> <button> SSC - 2020
+</button></a>
+</p>
+        `;
+    break;
+
+  case 'HSC':
+    contentDiv.innerHTML = `
+<p align="center"><a href="#"> <button> HSC - 2024
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/hsc_result2023/search/each.php"> <button> HSC - 2023
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/hsc_result2022/search/each.php"> <button> HSC - 2022
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/hsc_result2021/search/each.php"> <button> HSC - 2021
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/hsc_result2020/search/each.php"> <button> HSC - 2020
+</button></a>
+</p>
+        `;
+    break;
+
+                default:
+                    contentDiv.innerHTML = '<h2>';
+            }
+        }
+        
+        
+   // Function to display the popup ad
+  function showPopup() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  // Function to close the popup ad
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  // Show the popup ad after 3 seconds (for demonstration purposes)
+  setTimeout(showPopup, 2000);
+  
+    </script>
+</body>
+</html>
