@@ -7,7 +7,7 @@
 <meta property="og:description" content="এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
         এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারেন।">
     <meta property="og:image" content="Dbr.jpg">
-<link rel="icon" href=Dbr.jpg"/>    
+<link rel="icon" href="Dbr.jpg"/>    
     <title>Dinajpur Board Individual Student Result</title>
     <style>
     
@@ -168,11 +168,13 @@ button:hover::before {
     <nav>
         <a href="#" onclick="showContent('SSC')">SSC</a>
        <a>|</a> 
-        <a href="#" onclick="showContent('HSC')">HSC</a>
-      <!---  <a href="#" onclick="showContent('contact')">Contact</a> --->
+        <a href="#" onclick="showContent('HSC')">HSC</a> 
+        <a>|</a>
+       <a href="#" onclick="showContent('All')">All </a> 
     </nav>
     <div id="content">
-        <h2>Welcome!</h2>
+    <marquee style="background-color:brown"> <mark> ✪ SSC 2024 ফলাফল প্রকাশ করা হতে পারে আগামী ১১ই মে, তবে তা নির্ভর করছে প্রধানমন্ত্রী উপরে। </mark> </marquee>
+        <h2 style="color:Purple">Welcome!</h2>
         <p>এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
         এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারবেন | </p>
     <h1>নির্দেশনা- </h1>
@@ -183,11 +185,15 @@ button:hover::before {
     <h3>✪ HSC</h3>
     <p> HSC পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
        <a href="#" onclick="showContent('HSC')"> <img src="Hsc.jpg" width="100%"></a>
-       
-   <p style="color:green"> Sponsor ◑
+  <h3>✪ All</h3>
+    <p> এইচএসসি/আলিম/সমমান,জেএসসি/জেডিসি,এসএসসি/দাখিল,এসএসসি(ভোকেশনাল),এইচএসসি/আলিম,এইচএসসি(ভোকেশনাল),এইচএসসি(বিএম), ডিপ্লোমা ইন কমার্স, ডিপ্লোমা ইন বিজনেস স্টাডিজ পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
+       <a href="#" onclick="showContent('All')"> <img src="All.jpg" width="100%"></a>
+             
+   <p style="color:blue "> Sponsor ◑
    <br> 
    হাজার টাকার গাইড, টেস্টপেপার ও প্রশ্নব্যাংকের বিকল্প এখন
-CHORCHA APP
+CHORCHA APP <br>
+যে কোনো সাবস্ক্রিপশন এ ২০% ডিসকাউন্ট পেতে <br> প্রোমো কোর্ডটি ব্যবহার করুন - <br> "dgcc20"
    </p>
    <img src="ads.jpg" alt="ads" width="100%">
   <h5>page visitors : </h5>   
@@ -254,7 +260,15 @@ CHORCHA APP
 </p>
         `;
     break;
-
+case 'All':
+    contentDiv.innerHTML = `
+    <h4> HSC/Alim/Equivalent <br> JSC/JDC  <br>SSC/Dakhil <br> SSC(Vocational) <br> HSC/Alim <br> HSC(Vocational) <br>HSC(BM) <br> Diploma in Commerce <br> Diploma in Business Studies</h4>
+<p align="center"><a href="http://www.educationboardresults.gov.bd/"> <button>
+View Result 
+</button></a>
+</p>
+    `;
+    break;
                 default:
                     contentDiv.innerHTML = '<h2>';
             }
