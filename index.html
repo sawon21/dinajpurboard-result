@@ -166,6 +166,31 @@ button:hover::before {
     color: blue ;
     font-size: 13px;
   }
+  
+  
+#quote {
+        font-size: 18px;
+        font-family: 'AponaLohit', sans-serif;
+
+        color: Purple;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .info-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    color: white;
+    background-color: black ;
+    border-radius: 70px;
+    transition: background-color 0.3s;
+  }  
+  
+  
+  
 </style>
 </head>
 <body>
@@ -186,7 +211,9 @@ button:hover::before {
         <marquee style="background-color:brown"> <mark> ✪ SSC 2024 ফলাফল প্রকাশ করা হতে পারে আগামী ১২ই মে, তবে তা নির্ভর করছে প্রধানমন্ত্রী উপরে। </mark> </marquee>
     <div id="content">
 
-        <h2 style="color:Purple">Welcome!</h2>
+ 
+  <div id="quote"></div>
+<h2 style="color:black">Welcome!</h2>  
         <p>এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
         এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারবেন | <br> এবং এইচএসসি/আলিম/সমমান, জেএসসি/জেডিসি, এসএসসি/দাখিল, এসএসসি (ভোকেশনাল),এইচএসসি/আলিম,এইচএসসি (ভোকেশনাল),এইচএসসি (বিএম),ডিপ্লোমা ইন কমার্স, ডিপ্লোমা ইন বিজনেস,  স্টাডিজ এর ফলাফলও দেখতে পারবেন | </p>
     <h1><u>নির্দেশনা- </u></h1>
@@ -303,6 +330,58 @@ View Result
   // Show the popup ad after 3 seconds (for demonstration purposes)
   setTimeout(showPopup, 1000);
 
+
+
+
+const quotes = [
+    "মানুষের জন্ম হয় সফলতার জন্য, ব্যর্থতার জন্য নয়। - হেনরি ডেভিড থরো।",
+    "ব্যর্থ হওয়ার নানা উপায় আছে, কিন্তু সফল হওয়ার উপায় একটাই; এবং তা হলো কঠোর পরিশ্রম। - এরিস্টটল",
+    "ধৈর্য্যই হলো সফলতার প্রধান শর্ত। - বিল গেটস ",
+    "সফলতা মানে উৎসাহ না হারিয়ে একটার পর একটা ব্যর্থতাকে পার করে যাওয়া। - উইনস্টন চার্চিল",
+    "পরিশ্রম কখনো কাউকে ধোকা দেয় না এবং পূর্বেও দেয় নি। — হাকিম্যান হিকিগায়া",
+    "পরিশ্রম মেধাকেও হার মানিয়ে দেয় যখন মেধা পরিশ্রম করতে ভুলে যায়। — টিম নটকে",
+    "যদি তুমি পরিশ্রমকে নিজের অস্ত্র বানিয়ে নিতে পারো তবে সাফল্য অবশ্যই তোমার চাকরে পরিণত হবে।",
+    "পৃথিবীতে সবচাইতে কঠিন কাজ হলো নিজে সংশোধন হওয়া, আর সবচাইতে সহজ কাজ হলো অন্যের সমালোচনা করা । — হযরত আলী (রাঃ)",
+    "ধ্বংস তার জন্য, যার আজকের দিনটা গতকালের চেয়ে উত্তম হলো না । — আল কোরআন", 
+    "মানুষের মনে এমন ভাবে নিজের জন্য জায়গা করে নাও, যেন তুমি মরে গেলে তোমার জন্য তারা দোয়া করে , আর বেঁচে থাকে তোমাকে ভালোবাসে। — হযরত আলী (রাঃ)",
+    "দয়া বিশ্বাসীর একটি চিহ্ন; যার দয়া নেই, তার মাঝে বিশ্বাস (ঈমান) নেই| – মুসলিম",
+    "সময়ে সত্য বল – এমনকি যদিও তা অন্যদের কাছে কঠিন ও অপছন্দনীয় হয়",
+    "প্রতিটি মানুষ তার কাজের সেই ফলই পাবে,যা সে নিয়্যত করেছে। – বুখারী",
+    "যার দুটি দিন একই রকম কাটলো, সে ক্ষতিগ্রস্ত হলো। – আল হাদিস",
+    "যে জ্ঞানের সন্ধানে বের হয়, সে আল্লাহর পথে বের হয়। (তিরমিযী)",
+    "সর্বোত্তম জীবন পদ্ধতি হচ্ছে মুহাম্মদ সাঃ প্রদর্শিত পদ্ধতি। (সহীহ মুসলিম)",
+    "উত্তম চরিত্রের চাইতে বড় মর্যাদা আর নেই। (ইবনে হিব্বান)",
+"তোমাদের মধ্যে সবচেয়ে ভালো মানুষ তারা,যাদের আচার ব্যবহার সবচেয়ে ভালো। (সহীহ বুখারী)",
+"যে অংগীকার রক্ষা করেনা, তার ধর্ম নেই। (মিশকাত)",
+"দান হচ্ছে একটি প্রমাণ। (সহীহ মুসলিম)",
+"সত্য দেয় মনের শান্তি আর মিথ্যা দেয় সংশয়। (তিরমিযী)",
+];
+
+function typeWriter(text, i, fnCallback) {
+    if (i < text.length) {
+        document.getElementById("quote").innerHTML = text.substring(0, i+1);
+        setTimeout(function() {
+            typeWriter(text, i + 1, fnCallback)
+        }, 100);
+    } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, 1000);
+    }
+}
+
+function displayQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    typeWriter(randomQuote, 0, function() {
+        // Typing animation complete, do something here if needed
+    });
+}
+
+// Display initial quote
+displayQuote();
+
+  
+  
+  
     </script>
 </body>
 </html> 
