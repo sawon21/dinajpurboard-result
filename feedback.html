@@ -335,12 +335,26 @@ fieldset[disabled] a.btn {
   background-image: none;
   border-color: #01549b;
 }
+/* Define the animation */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
 
+  /* Apply the animation to the icon */
+  .home-icon {
+    animation: bounce 1s infinite;
+  }
+  h3{
+    font-size: 25px;
+  }
  </style>
   </head>
   <body>
      <script src="https://use.fontawesome.com/a6f0361695.js"></script>
-<h3><a href="index.html">Home </a></h3>
+<h3><a href="index.html"><i class="fas fa-home home-icon"></i>Home</a></h3>
+
 <h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
 <h4 id="fh4">Your review will help us improve our customer service and user-friendliness standards.</h4>
 
@@ -382,7 +396,7 @@ fieldset[disabled] a.btn {
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="fa fa-heart"></i></span>
-   <select class="form-control" id=option name="Rate ">
+   <select class="form-control" id=option name="Rate " >
      <option value="">Rating </option>
       <option>𓆩🖤𓆪</option>
       <option>𓆩🖤𓆪𓆩🖤𓆪</option>
@@ -401,13 +415,13 @@ fieldset[disabled] a.btn {
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-  <textarea class="form-control" id="review" rows="6" name="Message " placeholder="Please report/suggest any issues "required ></textarea>
+  <textarea class="form-control" id="review" rows="6" name="Message " placeholder="Please report/suggest any issues " required></textarea>
  
     </div>
   </div>
 </div>
 
- <button type="submit" class="btn btn-primary">Submit</button>
+ <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
 
 </form>
   </body>
