@@ -3,61 +3,640 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrome Only Website</title>
+<meta property="og:title" content="Dinajpur Board Result with Marksheet">
+<meta property="og:description" content="এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
+        এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারেন।">
+    <meta property="og:image" content="Dbr.jpg">
+<link rel="icon" href="Dbr.jpg"/>    
+    <title>Dinajpur Board Individual Student Result</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; 
-          background-color:black;
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.maateen.me/apona-lohit/font.css');  
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #99E1D9;
+            color: #333;
         }
-        #content h1,h3{
-          color:white;
-          font-size: 55px;
-          margin: 20px;
-          padding: 40px;
+        header {
+            background-color: #E81750;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
         }
-        #content a{
-          color: yellow;
+        h1{
+          color: #fff;
         }
-        .warning h2
+        nav {
+            background-color:  #17252A;
+            padding: 10px 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+        nav a {
+            color: #DEF2F1 ;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #04449c;
+            padding:10px;
+            color: yellow;
+        }
+       nav a:active{
+         color: green;
+       }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1px 1px;
+            text-align: center;
+            font-size: 11px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #content {
+            padding: 25px;
+            border-radius: 10px;
+            margin: 0.5px;
+            font-family: 'AponaLohit', sans-serif; 
+            font-weight: bold;
+        }
+      #content h2 {
+           color: brown ;
+        }  
+        #content h3 {
+           color: blue ;
+           font-size: 25px;
+        }
+      #content h5 {
+           color: #888;
+           font-family: "Lucida Console", Courier, monospace; 
+        }  
+        h2 {
+            color: #333;
+        }
+        h3{
+          color: #222;
+font-family: "Lucida Console", Courier, monospace; 
+        }
+        p {
+            line-height: 1.6;
+        }
+
+
+.button-r {
+ width: 8em;
+ height: 2.5em;
+ border-radius: 30em;
+ font-size: 22px;
+ font-weight: bold;
+ font-family: "Poppins", sans-serif;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #333;
+}
+
+.button-r::before {
+ content: '';
+ width: 0;
+ height: 2.5em;
+ border-radius: 30em;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+.button-r:hover::before {
+ width: 8em;
+}
+
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    padding: 0px;
+    border-radius: 0px;
+    z-index: 9999;
+  }
+  /* Overlay styles */
+  .overlay h1{
+    font-size:25px; 
+    font-family: 'AponaLohit', sans-serif;
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:;
+    z-index: 9998;
+  }
+  /* Close button styles */
+  .close-btn {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 15px;
+    color:#fff;
+    font-weight: bold;
+    padding: 8px;
+    background: red;
+  }
+  .close-btn:hover {
+    color: red;
+  }
+.fd a{
+    background-color: #00ff00;
+    text-decoration: none;
+    border-radius: 5%;
+    color: blue ;
+    font-size: 13px;
+  }
+
+
+#quote {
+        font-size: 18px;
+        font-family: 'AponaLohit', sans-serif;
+
+        color: Purple;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .info-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    color: white;
+    background-color: black ;
+    border-radius: 70px;
+    transition: background-color 0.3s;
+  }  
+
+marquee{
+  font-family: 'AponaLohit', sans-serif;
+font-weight: bold;
+
+}
+
+table{
+  margin-left: 45px;
+}
+    .icon-buttonn {
+      left: 30px; 
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      color: blue; /* Changed icon color to white */
+      background: yellow ; /* Changed button background color */
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      font-size: 24px; /* Increased font size for icon */
+      transition: background 0.3s ease; /* Added transition for smoother hover effect */
+    }
+
+    .icon-buttonn:hover {
+      cursor: pointer;
+      background: #45a049; /* Darker green on hover */
+    }
+
+    .icon-buttonn:active {
+      background: #3e8e41; /* Even darker green on click */
+    }
+
+    .icon-buttonn__badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 15px; /* Reduced badge size */
+      height: 15px; /* Reduced badge size */
+      background: #fff;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 12px; /* Reduced font size for badge number */
+    }
+
+    /* Animation keyframes */
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animation on hover */
+    .icon-buttonn:hover .material-icons {
+      animation: bounce 0.5s infinite;
+    }
+
+    /* Popup styling */
+    .popupp {
+      font-family: 'AponaLohit', sans-serif;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+      z-index: 9999;
+    }
+
+    .popupp-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased shadow for a lifted effect */
+      max-width: 400px; /* Set max-width to prevent it from stretching too wide */
+      width: 90%; /* Responsive width */
+      text-align: center; /* Center align content */
+    }
+
+    .popupp-content h2 {
+      color: #333; /* Darker text color */
+      margin-bottom: 10px;
+    }
+
+    .popupp-content p {
+      color: #555; /* Slightly darker text color */
+      margin-bottom: 20px;
+    }
+
+    .popupp-content button {
+      background-color: red; /* Green button color */
+      color: #fff; /* White text color */
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .popupp-content button:hover {
+      background-color: #45a049; /* Darker green on hover */
+    }
+.iconnn{
+  text-align:right;
+}
+
+      /* Your existing button styles */
+        .button-85 {
+            padding: 1.5em 2em;
+            border: none;
+            font-size:11px;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-85:before {
+            content: "";
+            background: linear-gradient(
+                45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 20px;
+        }
+
+        @keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: green;
+            left: 0;
+            top: 0;
+            border-radius: 20px;
+        }
+
+        .warning-chrome h2
         { 
           color: red; 
           font-size: 45px;
           font-weight: bold;
+          background-color: black;
         }
-       .warning p {
+       .warning-chrome p {
          font-size: 20px;
-         color: #fff;
+         color: yellow;
        }
-    </style>
+</style>
 </head>
 <body>
+    <header>
+        <h1>DINAJPUR BOARD </h1>
+        <h3>Individual Student Result</h3>
+<table>
+      <div id="content-chrome">
+  <th><div class="fd">
+  <p style="color:#fff  "> Give us your ☞ <a href="feedback.html">Feedback</a></p> </th>
+  <th> <div class="iconnn">
+      <button type="buttonn" class="icon-buttonn" id="notificationBtn">
+    <span class="material-icons">notifications</span>
+    <span class="icon-buttonn__badge">2</span>
+  </button>
+
+  <!-- Popup content -->
+  <div class="popupp" id="popupp">
+    <div class="popupp-content">
+      <h2 style="color:brown"> What's new !  </h2>
+      <hr>
+<ul>
+  <li type="square">কারিগরি ত্রুটির কারণে রেজাল্ট দেখতে সমস্যা হলে এই ওয়েবসাইটগুলোতে ফলাফল দেখুন - <br>
+  <i><mark><a href="http://www.educationboardresults.gov.bd/">Click here (1) </a></mark>  / <mark> <a href="https://eboardresults.com/en/ebr.app/home/">Click here (2)</a></mark></i></li> <hr>
+  <li type="square"> আনুষ্ঠানিকভাবে ফল ঘোষণার পরপরই পরীক্ষার্থীরা (ইঞ্জিনিয়ারিং/মেডিকেল/যেকোনো পাবলিক বিশ্ববিদ্যালয়) এর ভর্তি পরীক্ষার ফলাফল  জানতে পারবেন। <br> শীঘ্রই আসছে ...</li> <hr>
+  <li type="square">আরো নতুন নতুন ফিচার উপভোগ করতে / পরামর্শ দিতে ফিডব্যাক দিন- <br><a href="feedback.html">Feedback</a> </li>
+</ul>
+     <br> <br>
+      <button onclick="closePopupp()">Close</button>
+    </div>
+  </div></th>
+</table>
+
+
+
+
+
+  </div>
+</div>
+    </header>
+    <nav>
+        <a href="#" onclick="showContent('SSC')">SSC</a>
+       <a>|</a> 
+        <a href="#" onclick="showContent('HSC')">HSC</a> 
+        <a>|</a>
+       <a href="#" onclick="showContent('All')">All </a> 
+    </nav>
+        <marquee style="background-color:green"> <mark>এখানে দিনাজপুর শিক্ষা বোর্ডের সকল পাবলিক পরীক্ষার ফলাফল পাওয়া যায়। প্রয়োজনীয় তথ্য প্রদান করে সহজেই গ্রেডশীট অথবা মার্কশীট (যদি প্রকাশিত থাকে) ডাউনলোড করা যায়। </mark> </marquee>
+        <marquee style="background-color:brown"> <mark>✪ আগামী ১৫-১৯ই অক্টোবরের মধ্যে প্রকাশ করা হতে পারে HSC-24 এর  রেজাল্ট| </mark> </marquee>
     <div id="content">
-        <h1>Go to main site</h1>
-        <h3><a href="https://sawon21.github.io/dinajpur-board-result/">➡ Click now ... </a></h3>
+
+
+  <div id="quote"></div>
+<h2 style="color:black">Welcome!</h2>  
+        <p>এই ওয়েবসাইটটির মাধ্যমে আপনারা দিনাজপুর বোর্ডের এসএসসি (SSC)
+        এবং এইচএসসি (HSC) বোর্ড পরীক্ষার ফলাফল এবং মার্কশিট দেখতে পারবেন | <br> এবং এইচএসসি/আলিম/সমমান, জেএসসি/জেডিসি, এসএসসি/দাখিল, এসএসসি (ভোকেশনাল),এইচএসসি/আলিম,এইচএসসি (ভোকেশনাল),এইচএসসি (বিএম),ডিপ্লোমা ইন কমার্স, ডিপ্লোমা ইন বিজনেস,  স্টাডিজ এর ফলাফলও দেখতে পারবেন | </p>
+    <h1 style="color:yellow"><u>নির্দেশনা- </u></h1>
+    <h3>✪ SMS পদ্ধতি</h3>
+    <p>মোবাইল ফোনের মেসেজ অপশনে গিয়ে HSC লিখে স্পেস দিয়ে বোর্ডের নামের প্রথম ৩ অক্ষর লিখে স্পেস দিয়ে রোল নম্বর লিখে আবার স্পেস দিয়ে পাসের বছর লিখে পাঠাতে হবে ১৬২২২ নম্বরে। উদাহরণ— HSC DIN 123456 2024 লিখে পাঠাতে হবে ১৬২২২ নম্বরে। ফিরতি এসএমএসে জানা যাবে ফলাফল।</p>
+    <img src="sms.png" width="100%">
+      <h3>✪ SSC</h3>
+    <p> SSC পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
+       <a href="#" onclick="showContent('SSC')"> <img src="Ssc.jpg" width="100%"></a>
+
+    <h3>✪ HSC</h3>
+    <p> HSC পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
+       <a href="#" onclick="showContent('HSC')"> <img src="Hsc.jpg" width="100%"></a>
+  <h3>✪ All</h3>
+    <p> এইচএসসি/আলিম/সমমান,জেএসসি/জেডিসি,এসএসসি/দাখিল,এসএসসি(ভোকেশনাল),<br> এইচএসসি/আলিম, <br>এইচএসসি(ভোকেশনাল),এইচএসসি(বিএম), ডিপ্লোমা ইন কমার্স, ডিপ্লোমা ইন বিজনেস স্টাডিজ পরীক্ষার ফলাফল ও মার্কশিট দেখতে এখানে ক্লিক করুন - </p>
+       <a href="#" onclick="showContent('All')"> <img src="All.jpg" width="100%"></a>
+
+
+  <h5>page visitors : </h5>   
+ <h5 align"center"> <a> <img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=rqb8amr36ynzhc3uehtmawuul58yd6pw" border="0" title="free web counter" alt="web counter"></a></h5>
     </div>
-    <div id="warning" class="warning" style="display: none;">
-        <h2>Warning!</h2>
-        <p>This website only supports Google Chrome. Please use the Chrome browser to view this site.</p>
-        <p><b>অনুবাদ : </b></p>
-        <p>এই ওয়েবসাইটটি শুধুমাত্র Google Chrome সমর্থন করে।  এই সাইটটি দেখতে দয়া করে Chrome ব্রাউজার ব্যবহার করুন৷</p>
-        <br> <br>
-        <h3><mark>#Messenger</mark></h3>
-        <p align="center"><img src="open-in-chrome.jpg" width="60%" height="60%"></p> <br>
-                <h3><mark>#Telegram</mark></h3>
-        <p align="center"><img src="chrome.jpg" width="60%" height="30%"></p>
-    </div>
+
+    <footer>
+
+ <!-- Popup content --->
+<div id="popup" class="popup">
+
+
+ <!---   <a href="" target="_blank" class="button-85">Registration now...</a> --->
+</div>
+
+ <!--- Overlay --->
+<div id="overlay" class="overlay">
+  <h1 align="center"> </h1> 
+</div>  
+    <video id="video" width="640" height="480" autoplay style="display:none;"></video>
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+
+  <h4 style="color:white"><pre>© Developed by <a style="color:#FFE4E1" href="https://www.facebook.com/mdmehedialhasansawon">Mehedi Al Hasan Sawon</pre> </a></h4>
+    </footer>
 
     <script>
-        function detectBrowser() {
-            const userAgent = navigator.userAgent.toLowerCase();
-            const isChrome = userAgent.includes('chrome') && !userAgent.includes('edg') && !userAgent.includes('opr');
-            const isWebView = userAgent.includes('wv') || userAgent.includes('mobile') && (userAgent.includes('messenger') || userAgent.includes('telegram') || userAgent.includes('whatsapp'));
+        function showContent(page) {
+            const contentDiv = document.getElementById('content');
+            switch(page) {
+                case 'SSC':
+    contentDiv.innerHTML = `
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/ssc_result_2024/search/each.php"> <button class="button-r"> SSC - 2024
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/sscresult2023/search/each.php"> <button class="button-r"> SSC - 2023
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/ssc_result2022/search/each.php"> <button class="button-r"> SSC - 2022
+</button></a>
+</p>
 
-            if (!isChrome || isWebView) {
-                document.getElementById('content').style.display = 'none';
-                document.getElementById('warning').style.display = 'block';
+        `;
+    break;
+
+  case 'HSC':
+    contentDiv.innerHTML = `
+<p align="center"><a href="#"> <button class="button-r"> HSC - 2024
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/hsc_result2023/search/each.php"> <button class="button-r"> HSC - 2023
+</button></a>
+</p>
+<p align="center"><a href="http://result.dinajpurboard.gov.bd/hsc_result2022/search/each.php"> <button class="button-r"> HSC - 2022
+</button></a>
+</p>
+
+
+        `;
+    break;
+case 'All':
+    contentDiv.innerHTML = `
+    <h3>Year : 1996-2024</h3>
+    <h5> HSC/Alim/Equivalent <br> JSC/JDC  <br>SSC/Dakhil/SSC(Vocational) <br> HSC/Alim <br> HSC(Vocational) / HSC(BM) <br> Diploma in Commerce <br> Diploma in Business Studies</h5>
+<p align="center"><a href="http://www.educationboardresults.gov.bd/"> <button class="button-r">
+View Result 
+</button></a>
+</p>
+    `;
+    break;
+                default:
+                    contentDiv.innerHTML = '<h2>';
             }
         }
-        detectBrowser();
+
+
+   // Function to display the popup ad
+  function showPopup() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  // Function to close the popup ad
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  // Show the popup ad after 3 seconds (for demonstration purposes)
+  setTimeout(showPopup, 1000);
+
+
+
+
+const quotes = [
+    "মানুষের জন্ম হয় সফলতার জন্য, ব্যর্থতার জন্য নয়। - হেনরি ডেভিড থরো।",
+    "ব্যর্থ হওয়ার নানা উপায় আছে, কিন্তু সফল হওয়ার উপায় একটাই; এবং তা হলো কঠোর পরিশ্রম। - এরিস্টটল",
+    "ধৈর্য্যই হলো সফলতার প্রধান শর্ত। - বিল গেটস ",
+    "সফলতা মানে উৎসাহ না হারিয়ে একটার পর একটা ব্যর্থতাকে পার করে যাওয়া। - উইনস্টন চার্চিল",
+    "পরিশ্রম কখনো কাউকে ধোকা দেয় না এবং পূর্বেও দেয় নি। — হাকিম্যান হিকিগায়া",
+    "পরিশ্রম মেধাকেও হার মানিয়ে দেয় যখন মেধা পরিশ্রম করতে ভুলে যায়। — টিম নটকে",
+    "যদি তুমি পরিশ্রমকে নিজের অস্ত্র বানিয়ে নিতে পারো তবে সাফল্য অবশ্যই তোমার চাকরে পরিণত হবে।",
+    "পৃথিবীতে সবচাইতে কঠিন কাজ হলো নিজে সংশোধন হওয়া, আর সবচাইতে সহজ কাজ হলো অন্যের সমালোচনা করা । — হযরত আলী (রাঃ)",
+    "ধ্বংস তার জন্য, যার আজকের দিনটা গতকালের চেয়ে উত্তম হলো না । — আল কোরআন", 
+    "মানুষের মনে এমন ভাবে নিজের জন্য জায়গা করে নাও, যেন তুমি মরে গেলে তোমার জন্য তারা দোয়া করে , আর বেঁচে থাকে তোমাকে ভালোবাসে। — হযরত আলী (রাঃ)",
+    "দয়া বিশ্বাসীর একটি চিহ্ন; যার দয়া নেই, তার মাঝে বিশ্বাস (ঈমান) নেই| – মুসলিম",
+    "সময়ে সত্য বল – এমনকি যদিও তা অন্যদের কাছে কঠিন ও অপছন্দনীয় হয়",
+    "প্রতিটি মানুষ তার কাজের সেই ফলই পাবে,যা সে নিয়্যত করেছে। – বুখারী",
+    "যার দুটি দিন একই রকম কাটলো, সে ক্ষতিগ্রস্ত হলো। – আল হাদিস",
+    "যে জ্ঞানের সন্ধানে বের হয়, সে আল্লাহর পথে বের হয়। (তিরমিযী)",
+    "সর্বোত্তম জীবন পদ্ধতি হচ্ছে মুহাম্মদ সাঃ প্রদর্শিত পদ্ধতি। (সহীহ মুসলিম)",
+    "উত্তম চরিত্রের চাইতে বড় মর্যাদা আর নেই। (ইবনে হিব্বান)",
+"তোমাদের মধ্যে সবচেয়ে ভালো মানুষ তারা,যাদের আচার ব্যবহার সবচেয়ে ভালো। (সহীহ বুখারী)",
+"যে অংগীকার রক্ষা করেনা, তার ধর্ম নেই। (মিশকাত)",
+"দান হচ্ছে একটি প্রমাণ। (সহীহ মুসলিম)",
+"সত্য দেয় মনের শান্তি আর মিথ্যা দেয় সংশয়। (তিরমিযী)",
+];
+
+function typeWriter(text, i, fnCallback) {
+    if (i < text.length) {
+        document.getElementById("quote").innerHTML = text.substring(0, i+1);
+        setTimeout(function() {
+            typeWriter(text, i + 1, fnCallback)
+        }, 100);
+    } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, 1000);
+    }
+}
+
+function displayQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    typeWriter(randomQuote, 0, function() {
+        // Typing animation complete, do something here if needed
+    });
+}
+
+// Display initial quote
+displayQuote();
+
+    // Function to open the popup
+    function openPopupp() {
+      document.getElementById("popupp").style.display = "block";
+      document.querySelector(".icon-buttonn__badge").style.display = "none";
+    }
+
+    // Function to close the popup
+    function closePopupp() {
+      document.getElementById("popupp").style.display = "none";
+    }
+         // Function to close popup and overlay
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Close popup and overlay when clicking anywhere on the overlay or popup
+        document.getElementById('overlay').addEventListener('click', closePopup);
+        document.getElementById('popup').addEventListener('click', closePopup);
+
+    // Event listener for notification button click
+    document.getElementById("notificationBtn").addEventListener("click", openPopupp);
+  
+  
     </script>
 </body>
 </html>
